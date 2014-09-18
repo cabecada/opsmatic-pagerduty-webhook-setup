@@ -65,11 +65,7 @@ class PagerDutySetup
   end
 
   def query_string(params)
-    param_fragment = nil
-    if params.is_a?(Array)
-      param_fragment = params.flatten.compact.join('&')
-    end
-    param_fragment
+    params.is_a?(Array) ? params.flatten.compact.join('&') : nil
   end
 
   def pager_duty_pagination_parameters(page)
